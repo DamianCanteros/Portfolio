@@ -56,7 +56,7 @@ function scrollToSection(sectionId) {
 }
 
 //Typing Effect
-function typingEffect(text = '', time = 150, label = '') {
+function typingEffect(text = '', time = 80, label = '') {
   const array = text.split('');
   label.innerHTML = '';
   let i = 0;
@@ -89,7 +89,7 @@ function typingEffect(text = '', time = 150, label = '') {
   }
 }
 
-typingEffect('Hi, I am a Full Stack', 150, typing);
+typingEffect('Hi, I am a Full Stack', 80, typing);
 
 // Portfolio Filter 
 filterContainer.addEventListener("click", (event) => {
