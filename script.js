@@ -7,6 +7,8 @@ let write2;
 const typing = document.getElementById('typing');
 const typing2 = document.getElementById('typing2');
 
+const bars = document.querySelectorAll('.cont__bar');
+
 const filterContainer = document.querySelector(".categories");
 const galleryItems = document.querySelectorAll(".card");
 
@@ -90,6 +92,28 @@ function typingEffect(text = '', time = 80, label = '') {
 }
 
 typingEffect('Hi, I am a Full Stack', 80, typing);
+
+// Animated Bar
+
+
+// Counter Porcent Bar
+// Para cada barra de progreso, incrementa el valor en un ciclo
+bars.forEach(bar => {
+  const percentNumber = bar.querySelector('.percent-number');
+  const barLength = parseInt(bar.querySelector('.bar').classList[1].slice(5));
+  let percent = 0;
+  const intervalTime = barLength / 100 * 2000; // Calcula el tiempo del intervalo basado en el porcentaje de la barra
+  setTimeout(() => { // Agrega un delay antes de comenzar la animación
+    const interval = setInterval(() => {
+      percentNumber.innerText = `${percent}%`;
+      bar.querySelector('.bar').style.setProperty('--bar-lenght', `${percent}%`);
+      percent++;
+      if (percent > barLength) {
+        clearInterval(interval);
+      }
+    }, intervalTime / barLength); // Ajusta el intervalo en función del tiempo calculado
+  }, 2000);
+});
 
 // Portfolio Filter 
 filterContainer.addEventListener("click", (event) => {
