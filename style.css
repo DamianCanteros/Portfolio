@@ -173,10 +173,9 @@ a{
 
   .percent-number {
     position: absolute;
-    right: 10px; /* Posición en el lado derecho */
-    top: 50%;
-    transform: translateY(-50%);
+    right: 10px;
   }
+
 
 .bar, .bar::after {
     position: relative;
@@ -194,7 +193,6 @@ a{
     background-color: var(--primary-bg-color);
     transition: var(--transition);
     animation: bar-fill 2s ease-in-out forwards;
-    animation-delay: 2s;
 }
 
 .bar--75::after {
@@ -214,6 +212,29 @@ a{
         transform: translateX(var(--bar-lenght));
     }
 }
+
+.invisible .bar--75::after,
+.invisible .bar--60::after,
+.invisible .bar--90::after {
+  --bar-lenght: 0;
+  animation: none;
+}
+
+.bar--75:not(.invisible) .bar::after {
+  --bar-lenght: 75%;
+  animation: bar-fill 2s ease-in-out forwards;
+}
+
+.bar--60:not(.invisible) .bar::after {
+  --bar-lenght: 60%;
+  animation: bar-fill 2s ease-in-out forwards;
+}
+
+.bar--90:not(.invisible) .bar::after {
+  --bar-lenght: 90%;
+  animation: bar-fill 2s ease-in-out forwards;
+}
+
 
 /* ------- Tecnologies -------- */
 .logo {
