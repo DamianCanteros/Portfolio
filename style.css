@@ -268,6 +268,12 @@ a{
     border-bottom: 1px solid var(--primary-bg-color);
 }
 
+.info_text {
+    padding-top: 16px;
+    padding-bottom: 0;
+    font-size: 11pt;
+}
+
 .card {
     width: 300px;
     height: 350px;
