@@ -164,6 +164,16 @@ a{
     bottom: -8%;
 }
 
+/* ------- About -------- */
+#about {
+    background-color: hsl(0, 0%, 7%);
+    min-height:350px;
+    display: flex;
+    align-items: center;
+}
+  #about h2, #about p {
+    color: hsl(0, 0%, 90%);
+  }
 /* ------- Skills -------- */
 .cont__bar {
     width: 100%;
