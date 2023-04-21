@@ -1,7 +1,7 @@
 /* --------GENERAL STYLES -------- */
 :root {
-    --bg-color: hsl(0, 0%, 93%);
-    --text-color: hsl(0, 0%, 7%);
+    --bg-color: hsl(0, 0%, 90%);
+    --text-color: hsl(0, 0%, 13%);
     --primary-bg-color: hsl(156, 100%, 38%);
     --font: "Verdana";
     --transition: color 0.1s, background-color 0.2s ease-in-out;
@@ -16,8 +16,8 @@ body {
 }
 
 body.dark {
-    --bg-color: hsl(0, 0%, 7%);
-    --text-color: hsl(0, 0%, 93%);
+    --bg-color: hsl(0, 0%, 13%);
+    --text-color: hsl(0, 0%, 98%);
 }
 
 header {
@@ -326,6 +326,10 @@ a{
 
 .card:hover .overlay {
     opacity: 0.8;
+}
+
+.card.hide {
+    display: none;
 }
 
 /* ------- FOOTER -------- */
