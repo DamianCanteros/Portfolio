@@ -1,4 +1,5 @@
 // Var and elements of DOM
+const preferedColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 const toggleTheme = document.getElementById('toggle-theme');
 const toggleIcon = document.querySelector('#toggle-theme svg use');
 const toggleText = document.getElementById('toggle-text');
@@ -7,17 +8,24 @@ const filterContainer = document.querySelector(".categories");
 const galleryItems = document.querySelectorAll(".card");
 
 /* ------- Dark Mode -------- */
-toggleTheme.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  
-  if (toggleIcon.getAttribute('xlink:href') === '#moon') {
+const setTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  if (theme === 'dark') {
     toggleIcon.setAttribute('xlink:href', '#sun');
     toggleText.textContent = 'Light';
   } else {
     toggleIcon.setAttribute('xlink:href', '#moon');
     toggleText.textContent = 'Dark';
   }
+}
+
+toggleTheme.addEventListener('click', () => {
+  let buttonToTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+  setTheme(buttonToTheme);
 });
+
+setTheme(localStorage.getItem('theme') || preferedColorScheme);
 
 /* ------- UP Button -------- */
 window.onscroll = function() {scrollFunction()};
