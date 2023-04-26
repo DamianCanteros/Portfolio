@@ -1,7 +1,7 @@
 /* --------GENERAL STYLES -------- */
 :root {
     --primary-bg-color: hsl(156, 100%, 38%);
-    --font: "Verdana";
+    --font: Verdana, Geneva, Tahoma, sans-serif;
     --transition: color 0.1s, background-color 0.2s ease-in-out;
     --bar-lenght: 0%; 
 }
@@ -20,6 +20,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font);
+    font-size: 1em;
     transition: var(--transition);
 }
 
@@ -276,12 +277,12 @@ h2 {
 
 /* ------- PORTFOLIO -------- */
 .categories ul li {
-    font-size: small;
+    font-size: 11pt;
     cursor: pointer;
 }
 
 .categories .filter-item.active {
-    border-bottom: 1px solid var(--primary-bg-color);
+    border-bottom: 2px solid var(--primary-bg-color);
 }
 
 .info_text {
