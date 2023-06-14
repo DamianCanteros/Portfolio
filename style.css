@@ -296,7 +296,8 @@ h2 {
     display: block;
     position: relative;
 }
-.card img {
+.card img, 
+.card iframe {
     width: 100%;
     padding: 3%;
     padding-top: 4%;
@@ -357,6 +358,15 @@ h2 {
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
+}
+
+.card .videos {
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .card .info {
